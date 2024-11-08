@@ -1,0 +1,9 @@
+Converting 0x6debc5a1 to decimal, we see that this represents the last 12 digits of the serial number.
+
+So, convert first four bytes to little endian and decode as decimal.
+
+3802472925 --> 0160 0380 2472 9250 --> 0160038024729250
+
+This is incorrect, so we suspect one of the digits we insert (01600...0) is a checksum ("loon check")
+
+A google gives https://en.wikipedia.org/wiki/Luhn_algorithm. Brute forcing the last digit gives 0160038024729259.

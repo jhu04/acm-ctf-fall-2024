@@ -1,0 +1,3 @@
+ghidra reveals the program opens file "flag[David Lynch voice:]" and compares its contents to a string in memory.
+
+gdb to read the desired length of the string from memory, then run until just before strncmp. Read strncmp arguments using x/s $rdi.

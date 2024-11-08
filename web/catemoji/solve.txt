@@ -1,0 +1,1 @@
+Check for "/" is done before url encoding, so visit http://128.101.131.207:8001/%2fflag.txt

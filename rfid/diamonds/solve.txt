@@ -1,0 +1,7 @@
+Trying different values that differ, we obtain
+NOT 40B743
+NOT 43B740
+NOT 40b743
+NOT 43b740
+
+We realize that there is a consistent 2202 across 0h and 2h which changes to FF03 in 4h. This is the flag.

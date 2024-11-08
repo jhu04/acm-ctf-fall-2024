@@ -1,0 +1,45 @@
+gdb
+
+┌────────────────────────────────────────────────────────────────────────────────────┐
+│   0x555555555396  push   %rbp                                                      │
+│   0x555555555397  push   %rbx                                                      │
+│   0x555555555398  sub    $0x440,%rsp                                               │
+│B+ 0x55555555539f  mov    %rsp,%rdi                                                 │
+│   0x5555555553a2  call   0x5555555556b0                                            │
+│  >0x5555555553a7  pxor   %xmm0,%xmm0                                               │
+│   0x5555555553ab  lea    0x8(%rsp),%rcx                                            │
+│   0x5555555553b0  lea    0x10(%rsp),%rdx                                           │
+│   0x5555555553b5  mov    %rax,%r14                                                 │
+│   0x5555555553b8  mov    0xd19(%rip),%rax        # 0x5555555560d8                  │
+│   0x5555555553bf  movups %xmm0,0x10(%rsp)                                          │
+│   0x5555555553c4  lea    0xc3e(%rip),%rsi        # 0x555555556009                  │
+│   0x5555555553cb  lea    0xc3c(%rip),%rdi        # 0x55555555600e                  │
+│   0x5555555553d2  movups %xmm0,0x20(%rsp)                                          │
+│   0x5555555553d7  mov    %rax,0x14(%rsp)                                           │
+│   0x5555555553dc  movups %xmm0,0x30(%rsp)                                          │
+│   0x5555555553e1  call   0x555555555120 <getaddrinfo@plt>                          │
+│   0x5555555553e6  mov    %eax,%r13d                                                │
+│   0x5555555553e9  test   %eax,%eax                                                 │
+│   0x5555555553eb  jne    0x5555555554b0                                            │
+│   0x5555555553f1  mov    0x8(%rsp),%rax                                            │
+│   0x5555555553f6  mov    0xc(%rax),%edx                                            │
+│   0x5555555553f9  mov    0x8(%rax),%esi                                            │
+│   0x5555555553fc  mov    0x4(%rax),%edi                                            │
+│   0x5555555553ff  call   0x555555555130 <socket@plt>                               │
+│   0x555555555404  mov    %eax,%r12d                                                │
+└────────────────────────────────────────────────────────────────────────────────────┘
+multi-thre Thread 0x7ffff7f747 (asm) In:                     L??   PC: 0x5555555553a7
+/x86_64/multiarch/strncmp.c.
+Continuing.
+
+Breakpoint 6, 0x000055555555539f in ?? ()
+(gdb) ni
+0x00005555555553a2 in ?? ()
+0x00005555555553a7 in ?? ()
+(gdb) $rax
+Undefined command: "$rax".  Try "help".
+(gdb) p $rax
+$13 = 93824992248640
+(gdb) x $rax
+0x555555558340: "flag[This is my key to unlock the peculiarity]"
+(gdb)

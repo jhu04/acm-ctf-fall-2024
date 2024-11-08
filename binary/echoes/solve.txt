@@ -1,0 +1,6 @@
+Taking hints from previous flags, we see what is at 128.101.131.207:8000 (rather than korsune.com:8000). It brings up a page about undocumented API routes. Luckily, ghidra reveals the intended request.
+
+curl --location 'http://128.101.131.207:8000/events/' \
+--header 'Host: acm.umn.edu' \
+--header 'Content-Type: text/plain' \
+--data 'flag[This is my key to unlock the peculiarity]'
